@@ -1,0 +1,78 @@
+// rule:
+// rock beats scisor
+// scisor beats paper
+// paper beats rock
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main()
+{
+    cout<<"1 for rock"<<endl;
+    cout<<"2 for scisor "<<endl;
+    cout<<"3 for paper"<<endl;
+    int user_score=0;
+    int computer_score=0;
+    int user_input;
+    int input;
+    do{
+        cout<<"enter the user input"<<endl;
+        cin>>user_input;
+         srand(time(0));
+         int computer_input=(rand()%3)+1;
+        if(user_input==1)
+        {
+         if(computer_input==1)
+          cout<<"game draw"<<endl;
+         if(computer_input==2){
+         cout<<"you win"<<endl;
+         user_score++;
+         }
+         if(computer_input==3){
+         cout<<"you loose"<<endl;
+         computer_score++;
+         }
+        }
+         if(user_input==2)
+        {
+         if(computer_input==1){
+          cout<<"you loose"<<endl;
+          computer_score++;
+         }
+         if(computer_input==2){
+         cout<<"game draw"<<endl;
+         }
+         if(computer_input==3){
+         cout<<"you win"<<endl;
+         user_score++;
+         }
+        }
+         if(user_input==3)
+        {
+         if(computer_input==1){
+          cout<<"you win"<<endl;
+          user_score++;
+         }
+         if(computer_input==2){
+         cout<<"you loose"<<endl;
+         computer_score++;
+         }
+         if(computer_input==3)
+         cout<<"game draw"<<endl;
+        }
+     cout<<"enter 1 to continue the game else 0"<<endl;
+     cin>>input;
+    }while(input!=0);
+   if(user_score>computer_score)
+   {
+    cout<<"you are the winner of the game"<<endl;
+   }
+   else if(user_score==computer_score)
+   {
+    cout<<"game tie"<<endl;
+   }
+   else{
+    cout<<"you loose the game"<<endl;
+   }
+return 0;
+}
